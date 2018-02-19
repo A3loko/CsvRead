@@ -31,10 +31,10 @@ public class QueryRead {
         String a[]= query.split("select ");
         String b[]= a[1].split(" from");
         String c[]=b[0].split(",");
-        /*for(String s:c)
-        System.out.println(s);*/
         return c;
 	}
+	
+		
 }
 	
 	

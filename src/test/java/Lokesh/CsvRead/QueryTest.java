@@ -1,9 +1,7 @@
 package Lokesh.CsvRead;
 
-import csvRead.*;
+import csvRead.QueryRead;
 import org.junit.Assert;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -14,11 +12,11 @@ import org.junit.runner.RunWith;
 
 @RunWith(JUnitPlatform.class)
 public class QueryTest {
-		QueryRead qp;
+		static QueryRead qp;
 		
 		@BeforeAll
 		static void init() {
-			System.out.println("Beginning");
+			System.out.println("Begining");
 		}
 		
 		@BeforeEach

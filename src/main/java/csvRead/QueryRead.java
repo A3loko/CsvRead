@@ -3,22 +3,20 @@ package csvRead;
 import java.util.Scanner;
 
 public class QueryRead {
-	
-	
-	
-	//Taking the query as input
-    Scanner scanner = new Scanner(System.in);
-    String query = scanner.nextLine();
-	
+	    String q = "Select id from ipl.csv";
+	    
     //Tokenizing the input query
     public String[] token() {
-    	String[] tok=query.split(" "); 
+    	String[] tok=q.split(" "); 
+    	
+    	for(String s:tok)
+    		System.out.println(s);
     	return tok;
     }
     
     //Extracting the file name
     public String fileName() {
-    	String a[] = query.split("from ");
+    	String a[] = q.split("from");
     	String b[]=a[1].split("where");
     	return b[0];
     }
@@ -28,13 +26,12 @@ public class QueryRead {
 	public String[] columns() {
 		
       //Getting the columns to be retrieved
-        String a[]= query.split("select ");
-        String b[]= a[1].split(" from");
+        String a[]= q.split("select");
+        String b[]= a[1].split("from");
         String c[]=b[0].split(",");
         return c;
 	}
 	
-		
 }
 	
 	

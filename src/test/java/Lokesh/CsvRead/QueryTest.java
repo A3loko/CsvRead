@@ -1,30 +1,63 @@
 package Lokesh.CsvRead;
 
-import org.junit.Test;
+import csvRead.*;
+import org.junit.Assert;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
 
-import csvRead.QueryRead;
-
 @RunWith(JUnitPlatform.class)
 public class QueryTest {
-	
-	QueryRead qr;
-	
-	@BeforeEach
-	public void obj() {
-		qr=new QueryRead();
-	}
-	
-	@Test
-	public void testquery() {
+		QueryRead qp;
 		
-	}
-	
-	@AfterEach
-	public void close() {
-		qr = null;
-	}
+		@BeforeAll
+		static void init() {
+			System.out.println("Beginning");
+		}
+		
+		@BeforeEach
+		void beforeEach() {
+			qp = new QueryRead();
+		}
+		
+		@Test
+		public void columnTest() {
+			String query = "select id from everything";
+			String[] expected = {" select","id","from","everything "};
+			String[] result = qp.token();
+			Assert.assertArrayEquals( expected, result);
+		}
+		
+		@Test
+		public void columnsTest() {
+			String query = "select name,city,wickets from everything";
+			String[] expected = {" name","city","wickets "};
+			String[] result = qp.columns();
+			Assert.assertArrayEquals( expected, result);
+		}
+		
+		@Test
+		public void fileNameTest() {
+			String query = "select * from csv where this = 3";
+			String expected = "csv";
+			String result = qp.fileName();
+			Assert.assertEquals(expected, result);
+		}
+		
+		
+		@AfterEach
+		void afterEach() {
+			qp = null;
+		}
+		
+		@AfterAll
+		static void end() {
+			System.out.println("This is the end");
+		}
 }

@@ -17,10 +17,10 @@ public class QueryRead {
     }
     
     //Extracting the file name
-    public String FileName() {
+    public String fileName() {
     	String a[] = query.split("from ");
-    	System.out.println(a[1]);
-    	return a[1];
+    	String b[]=a[1].split("where");
+    	return b[0];
     }
     
     

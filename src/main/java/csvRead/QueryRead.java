@@ -1,9 +1,7 @@
 package csvRead;
 
-import java.util.Scanner;
-
 public class QueryRead {
-	    String q = "Select id from ipl.csv";
+	    String q = "select id,winner from ipl.csv";
 	    
     //Tokenizing the input query
     public String[] token() {
@@ -26,10 +24,19 @@ public class QueryRead {
 	public String[] columns() {
 		
       //Getting the columns to be retrieved
-        String a[]= q.split("select");
-        String b[]= a[1].split("from");
+        String a[]= q.split("select ");
+        String b[]= a[1].split(" from");
         String c[]=b[0].split(",");
         return c;
+	}
+	
+	public String[] condition(){
+		String a[] = q.split("where ");
+		return a;
+	}
+	
+	public String same() {
+		return q;
 	}
 	
 }

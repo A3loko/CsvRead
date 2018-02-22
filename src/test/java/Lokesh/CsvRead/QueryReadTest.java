@@ -30,7 +30,7 @@ public class QueryReadTest {
 	void tokenTest() {
 		String query = "select id from everything";
 		String[] expected = {" select","id","from","everything "};
-		String[] result = qr.token(query);
+		String[] result = qr.token();
 		Assert.assertArrayEquals( expected, result);
 	}
 	

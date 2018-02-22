@@ -5,29 +5,29 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Read rd = new Read();
+	/*	Read rd = new Read();
 		
 		ArrayList<String[]> lines1 = new ArrayList<>();
-		lines1=rd.read();
+		lines1=rd.read();*/
 		
 		//Taking the query as input
-		System.out.println("Enter the query below: ");
+		//System.out.println("Enter the query below: ");
 		
-         QueryRead qr = new QueryRead();
-         String[] lol = qr.columns();
-         
+         /*QueryRead qr = new QueryRead();
+         String[] col = qr.columns();*/
+         /*
         DataType dt = new DataType();
         
         ArrayList<String> type = new ArrayList<>();
-        type=dt.datatype();
+        type=dt.datatype();*/
         
-        Match match = new Match();
-         //int[] pop = match.match();
-         
-        /* for(int i:pop) {
-        	 System.out.println(i);
-         }*/
+        
+       /* Match find = new Match();
+        find.match();*/
+		
+		Print pr = new Print();
+		pr.print();
         
 	}
-
 }
+

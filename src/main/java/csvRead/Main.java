@@ -1,10 +1,9 @@
 package csvRead;
-import java.util.*;
 
 public class Main {
 
 	public static void main(String[] args) {
-		
+		String query1 = "select id from ipl.csv";
 	/*	Read rd = new Read();
 		
 		ArrayList<String[]> lines1 = new ArrayList<>();
@@ -26,7 +25,7 @@ public class Main {
         find.match();*/
 		
 		Print pr = new Print();
-		pr.print();
+		pr.print(query1);
         
 	}
 }

@@ -18,7 +18,7 @@ public class Read {
         
         //Splitting each row at ","
         while ((line = br.readLine()) != null) {
-            arr=line.split(",");
+            arr=line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
             lines.add(arr);
             }
     }

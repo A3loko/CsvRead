@@ -1,10 +1,9 @@
 package csvRead;
 
 public class QueryRead {
-	    String q = "select id,winner from ipl.csv";
 	    
     //Tokenizing the input query
-    public String[] token() {
+    public String[] token(String q) {
     	String[] tok=q.split(" "); 
     	
     	for(String s:tok)
@@ -13,7 +12,7 @@ public class QueryRead {
     }
     
     //Extracting the file name
-    public String fileName() {
+    public String fileName(String q) {
     	String a[] = q.split("from");
     	String b[]=a[1].split("where");
     	return b[0];
@@ -21,7 +20,7 @@ public class QueryRead {
     
     
     
-	public String[] columns() {
+	public String[] columns(String q) {
 		
       //Getting the columns to be retrieved
         String a[]= q.split("select ");
@@ -30,12 +29,12 @@ public class QueryRead {
         return c;
 	}
 	
-	public String[] condition(){
+	public String[] condition(String q){
 		String a[] = q.split("where ");
 		return a;
 	}
 	
-	public String same() {
+	public String same(String q) {
 		return q;
 	}
 	

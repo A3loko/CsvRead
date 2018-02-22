@@ -5,9 +5,9 @@ import csvRead.QueryRead;
 import csvRead.Read;
 
 public class Match {
-	public ArrayList<Integer> match(){
+	public ArrayList<Integer> match(String q){
 		QueryRead fromQuery = new QueryRead();
-		String[] col = fromQuery.columns();
+		String[] col = fromQuery.columns(q);
 		
 		ArrayList<Integer> count = new ArrayList<>();
 		Read fromData = new Read();
